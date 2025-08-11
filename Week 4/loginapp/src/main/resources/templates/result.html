@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Result</title>
+</head>
+<body>
+  <h1>Login Result</h1>
+
+  <div th:if="${ok}">
+    <p th:text="'Welcome, ' + ${username} + '!'"></p>
+    <p>Credentials matched (admin/password).</p>
+  </div>
+
+  <div th:if="${!ok}">
+    <p>Invalid credentials. Try again.</p>
+  </div>
+
+  <p><a th:href="@{/}">Back to Login</a></p>
+</body>
+</html>
